@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Resource Tool</title>
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .resource-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .resource-list li {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .resource-list a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .resource-list a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Resource Tool</h1>
+        <p>Your all-in-one resource for studying and learning.</p>
+    </header>
+
+    <div class="container">
+        <!-- Search bar -->
+        <input type="text" id="searchBar" class="search-bar" placeholder="Search for resources...">
+
+        <!-- Study Tips Section -->
+        <div class="section" id="study-tips">
+            <h2>Study Tips</h2>
+            <ul class="resource-list">
+                <li>Break down your study material into smaller, manageable parts.</li>
+                <li>Use active recall and spaced repetition for better retention.</li>
+                <li>Take regular breaks using techniques like the Pomodoro method.</li>
+                <li>Teach someone else what you've learned to reinforce your knowledge.</li>
+                <li>Stay organized with a planner or digital tool to track assignments and deadlines.</li>
+            </ul>
+        </div>
+
+        <!-- Useful Websites Section -->
+        <div class="section" id="useful-websites">
+            <h2>Useful Websites</h2>
+            <ul class="resource-list">
+                <li><a href="https://www.khanacademy.org/" target="_blank">Khan Academy</a> - Free online courses and lessons in various subjects.</li>
+                <li><a href="https://www.coursera.org/" target="_blank">Coursera</a> - Online courses from top universities.</li>
+                <li><a href="https://www.edx.org/" target="_blank">edX</a> - Learn from global universities and organizations.</li>
+                <li><a href="https://www.quizlet.com/" target="_blank">Quizlet</a> - Flashcards and study tools for students.</li>
+                <li><a href="https://www.wolframalpha.com/" target="_blank">Wolfram Alpha</a> - Computational knowledge engine, great for math and science.</li>
+            </ul>
+        </div>
+
+        <!-- Online Tools Section -->
+        <div class="section" id="online-tools">
+            <h2>Online Tools</h2>
+            <ul class="resource-list">
+                <li><a href="https://www.google.com/drive/" target="_blank">Google Drive</a> - Cloud storage for all your documents and projects.</li>
+                <li><a href="https://www.trello.com/" target="_blank">Trello</a> - Project management and to-do list tool.</li>
+                <li><a href="https://www.notion.so/" target="_blank">Notion</a> - All-in-one workspace for notes, tasks, and wikis.</li>
+                <li><a href="https://www.focus@will.com/" target="_blank">Focus@Will</a> - Focused music to help you concentrate while studying.</li>
+                <li><a href="https://www.canva.com/" target="_blank">Canva</a> - Graphic design tool for creating study materials and presentations.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Student Resource Tool. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle search functionality
+        const searchBar = document.getElementById("searchBar");
+        const sections = document.querySelectorAll(".section");
+
+        searchBar.addEventListener("input", function () {
+            const query = searchBar.value.toLowerCase();
+
+            sections.forEach(function (section) {
+                const listItems = section.querySelectorAll(".resource-list li");
+
+                listItems.forEach(function (item) {
+                    const text = item.textContent.toLowerCase();
+
+                    // Show item if it matches the search query, hide if it doesn't
+                    if (text.includes(query)) {
+                        item.style.display = "block";
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
